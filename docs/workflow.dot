@@ -1,0 +1,45 @@
+digraph G{rankdir=TB;dpi=150;node[shape=box style="filled,rounded" fontname="Helvetica" fontsize=12];label="Logistics Discrepancy-to-Claim Workflow";labelloc=t;fontsize=18;
+n0[label="1. Grokbot: shortlist 5 SAP-using
+Indian mid-size shippers" fillcolor="#cfe8ff" color="#1f6feb"];
+n1[label="2. Aslam approves list (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];
+n2[label="3. Grokbot drafts outreach:
+free 100-shipment check" fillcolor="#cfe8ff" color="#1f6feb"];
+n3[label="4. Aslam presses Send (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];
+n4[label="5. Client shares
+100-shipment export" fillcolor="#e9ecef"];
+n5[label="6. Script validates & cleans data" fillcolor="#cfe8ff" color="#1f6feb"];
+n6[label="7. Grokbot designs matching rules once" fillcolor="#cfe8ff" color="#1f6feb"];
+n7[label="8. Script runs matching" fillcolor="#cfe8ff" color="#1f6feb"];
+n8[label="9. Grokbot removes false positives" fillcolor="#cfe8ff" color="#1f6feb"];
+n9[label="10. Grokbot writes 1-page
+findings report (Rs X recoverable)" fillcolor="#cfe8ff" color="#1f6feb"];
+n10[label="11. Aslam approves report (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];
+n11[label="12. Aslam sends report
++ paid offer (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];
+n12[label="13. Demand gate: >=3 calls
++ >=1 paid pilot" fillcolor="#d3f9d8"];
+n13[label="14. Aslam sets price & signs (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];
+n14[label="15. Grokbot packages skill
++ scripts + tests" fillcolor="#cfe8ff" color="#1f6feb"];
+n15[label="16. Dots runs monthly exports,
+escalates exceptions" fillcolor="#cfe8ff" color="#1f6feb"];
+n16[label="17. Dots monthly recovery summary" fillcolor="#cfe8ff" color="#1f6feb"];
+n0->n1;
+n1->n2;
+n2->n3;
+n3->n4;
+n4->n5;
+n5->n6;
+n6->n7;
+n7->n8;
+n8->n9;
+n9->n10;
+n10->n11;
+n11->n12;
+n12->n13;
+n13->n14;
+n14->n15;
+n15->n16;
+n16->n6[style=dashed label="new client type /\nrule failure"];
+subgraph cluster_l{label="Legend";l1[label="AI agents / scripts (99%)" fillcolor="#cfe8ff" color="#1f6feb"];l2[label="Aslam (1%)" fillcolor="#ffd8a8" color="#d9480f" penwidth=3 shape=hexagon];l3[label="Client / demand gate" fillcolor="#e9ecef"];}
+}
